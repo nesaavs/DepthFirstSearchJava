@@ -24,7 +24,8 @@ public class DepthFirstSearch {
 		//populate with sample data
 		g.popSampleNodes();
 		
-		Node goal = g.getNode(16);
+		//Set the goal node
+		Node goal = g.findNode("Jawed");
 		
 		//initialise open list with start node
 		open.add(g.getRootNode());
@@ -43,7 +44,6 @@ public class DepthFirstSearch {
 			if(x.equals(goal)) {
 				result = "Success! "+ x.getData()+" Node reached";
 				break;
-				
 			}
 			
 			//generate children of x
@@ -70,21 +70,18 @@ public class DepthFirstSearch {
 			}
 			
 			// put remaining children at the start of open
+			//loop decrement from last item to ensure they are
+			//appear in the correct order once in open list
 			for(int i = xChildren.size(); i > 0; i--) {				
 				open.add(0, xChildren.get(i-1));
 			}
 			
 			
-			
-			
-
 			System.out.println("");
 		}//end while
 		
 		System.out.println(result);
-		
-
-	}
+	} // end main
 	
 	public static void printListState(ArrayList<Node> list) {
 		//output results			

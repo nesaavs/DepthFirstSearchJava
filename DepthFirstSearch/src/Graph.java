@@ -46,6 +46,23 @@ public class Graph {
 		return nodes.get(i);
 		
 	}
+	/**
+	 * Searches searches each node. If it cannot be found the null is returned. 
+	 * 
+	 * @param search The node to be searched for
+	 * @return	The node found at the position specified in the index.
+	 */
+	public Node findNode(String search) {
+		Node currentNode = null;
+			for(int i = 0; i < nodes.size(); i++) {
+				currentNode = nodes.get(i);
+					if(search.equals(currentNode.getData())) {
+						break;
+					}
+			}
+		return currentNode;
+	}
+	
 	
 	/**
 	 * Populates the graph with sample data. 

@@ -1,9 +1,11 @@
 # Depth First Search  #
 
+Simple depth first search program written in Java.
+
 
 ## How do I get set up? ##
 
-Project was developed on Java 7 and is ready to run.
+Project was developed on Java 8 and is ready to run.
 
 
 ## Feedback ##
