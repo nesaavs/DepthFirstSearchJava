@@ -31,18 +31,19 @@ public class DepthFirstSearch {
 		open.add(g.getRootNode());
 		
 		System.out.println("Depth First:");
-		System.out.println("Start: "+g.getRootNode().getData());
+		System.out.println("Start: "+g.getRootNode().getName());
 
 		//iterate through the open list
 		while(open.size() > 0) {
 			
 			//remove the leftmost state from open and call it x
 			x = open.get(0);
+			open.remove(0);
 			
 			
 			//if x is the goal return success else
 			if(x.equals(goal)) {
-				result = "Success! "+ x.getData()+" Node reached";
+				result = "Success! "+ x.getName()+" Node reached";
 				break;
 			}
 			
@@ -52,7 +53,7 @@ public class DepthFirstSearch {
 			
 			//put x in closed
 			closed.add(x);
-			open.remove(0);
+
 			
 			//print list state
 			System.out.print("Open: ");
@@ -86,10 +87,9 @@ public class DepthFirstSearch {
 	public static void printListState(ArrayList<Node> list) {
 		//output results			
 		for(int i = 0; i < list.size(); i++) {
-			System.out.print(list.get(i).getData()+", ");
+			System.out.print(list.get(i).getName()+", ");
 		}
-		System.out.print(" || ");	
-		
+		System.out.print(" || ");
 	}
 	
 }

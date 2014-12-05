@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * @author Shaun Plummer
  */
 public class Node {
-	String data;
+	String name;
 	ArrayList<Node> children = new ArrayList<Node>();
 	
 	/**
@@ -14,7 +14,7 @@ public class Node {
 	 * @param d	-Data stored in the node 
 	 */
 	public Node(String d) {
-		this.data = d;
+		this.name = d;
 	}
 		
 	/**
@@ -39,8 +39,8 @@ public class Node {
 	 * 
 	 * @return String state information.
 	 */
-	public String getData() {
-		return this.data;
+	public String getName() {
+		return this.name;
 	}
 
 }

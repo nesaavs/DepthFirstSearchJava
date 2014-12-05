@@ -56,7 +56,7 @@ public class Graph {
 		Node currentNode = null;
 			for(int i = 0; i < nodes.size(); i++) {
 				currentNode = nodes.get(i);
-					if(search.equals(currentNode.getData())) {
+					if(search.equals(currentNode.getName())) {
 						break;
 					}
 			}
