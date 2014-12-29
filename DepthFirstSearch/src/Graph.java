@@ -49,85 +49,34 @@ public class Graph {
 	/**
 	 * Searches searches each node. If it cannot be found the null is returned. 
 	 * 
-	 * @param search The node to be searched for
+	 * @param j The node to be searched for
 	 * @return	The node found at the position specified in the index.
 	 */
-	public Node findNode(String search) {
-		Node currentNode = null;
-			for(int i = 0; i < nodes.size(); i++) {
-				currentNode = nodes.get(i);
-					if(search.equals(currentNode.getName())) {
-						break;
-					}
+	public Node findNode(Integer j) {
+		Node goal = null;
+		for(Node cNode : nodes) {
+			if(j == cNode.getName() ) {
+				goal = cNode;
+				break;
 			}
-		return currentNode;
+		}
+		return goal;
 	}
-	
 	
 	/**
 	 * Populates the graph with sample data. 
 	 */
-	public void popSampleNodes() {
-		//Lets create nodes as given as an example in the article
-		Node nA = new Node("Animalia");
-		Node nVert = new Node("Vertebrates");
-		Node nInvert = new Node("Invertebrates");
-		Node nReptiles = new Node("Reptiles");
-		Node nFish = new Node("Fish");
-		Node nAmphibians = new Node("Amphibians");
-		Node nBirds = new Node("Birds");
-		Node nMammals = new Node("Mammals");
-		Node nMollusks = new Node("Mollusks");
-		Node nWorms = new Node("Worms");
-		Node nSponges = new Node("Sponges");
-		Node nCrocodiles  =new Node("Crocodiles");
-		Node nSnakes = new Node("Snakes");
-		Node nLizards = new Node("Lizards");
-		Node nTurtles = new Node("Turtles");
-		Node nJawless = new Node("Jawless");
-		Node nJawed = new Node("Jawed");
-		Node nFrogs = new Node("Frogs");
-		Node nToads = new Node("Toads");
-
-		//add nodes, create edges between nodes
-		nA.setChild(nVert);
-		nA.setChild(nInvert);
-		nVert.setChild(nReptiles);
-		nVert.setChild(nFish);
-		nVert.setChild(nAmphibians);
-		nVert.setChild(nBirds);
-		nVert.setChild(nMammals);
-		nInvert.setChild(nMollusks);
-		nInvert.setChild(nWorms);
-		nInvert.setChild(nSponges);
-		nReptiles.setChild(nCrocodiles);
-		nReptiles.setChild(nSnakes);
-		nReptiles.setChild(nLizards);
-		nReptiles.setChild(nTurtles);
-		nFish.setChild(nJawless);
-		nFish.setChild(nJawed);
-		nFrogs.setChild(nFrogs);
-		nFrogs.setChild(nToads);
-		
-		addNode(nA);
-		addNode(nVert);
-		addNode(nInvert);
-		addNode(nReptiles);
-		addNode(nFish);
-		addNode(nAmphibians);
-		addNode(nBirds);
-		addNode(nMammals);
-		addNode(nMollusks);
-		addNode(nWorms);
-		addNode(nSponges);
-		addNode(nCrocodiles);
-		addNode(nSnakes);
-		addNode(nLizards);
-		addNode(nTurtles);
-		addNode(nJawless);
-		addNode(nJawed);
-		addNode(nFrogs);
-		addNode(nToads);
-		setRootNode(nA);
-	} //End sample data method
+	public void popSampleNodes(int total) {
+		for(int i = 1; i < total; i++) {
+			
+			this.nodes.add(new Node(i));
+			if(i > 3) {
+				Node parent = nodes.get(i-4);
+				parent.setChild(nodes.get(i-3));
+				parent.setChild(nodes.get(i-2));
+			}
+		}
+		setRootNode(nodes.get(0));
+	}
+	
 }

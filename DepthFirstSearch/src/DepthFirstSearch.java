@@ -22,16 +22,15 @@ public class DepthFirstSearch {
 		String result = "Fails";
 		
 		//populate with sample data
-		g.popSampleNodes();
+		g.popSampleNodes(30);
 		
 		//Set the goal node
-		Node goal = g.findNode("Jawed");
+		Node goal = g.findNode(30);
 		
 		//initialise open list with start node
 		open.add(g.getRootNode());
 		
-		System.out.println("Depth First:");
-		System.out.println("Start: "+g.getRootNode().getName());
+		System.out.println("Depth first start state node: "+g.getRootNode().getName());
 
 		//iterate through the open list
 		while(open.size() > 0) {

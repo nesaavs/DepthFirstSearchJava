@@ -5,16 +5,16 @@ import java.util.ArrayList;
  * @author Shaun Plummer
  */
 public class Node {
-	String name;
+	int name;
 	ArrayList<Node> children = new ArrayList<Node>();
 	
 	/**
 	 * Adds the data used to represent the node state.
 	 * 
-	 * @param d	-Data stored in the node 
+	 * @param i	-Data stored in the node 
 	 */
-	public Node(String d) {
-		this.name = d;
+	public Node(int i) {
+		this.name = i;
 	}
 		
 	/**
@@ -39,7 +39,7 @@ public class Node {
 	 * 
 	 * @return String state information.
 	 */
-	public String getName() {
+	public int getName() {
 		return this.name;
 	}
 
